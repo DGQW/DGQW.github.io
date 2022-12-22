@@ -15,7 +15,7 @@ let myParagraph = document.querySelector('p');
 function setUserName() {
     let myInfo = prompt('请输入你想显示的信息。');
     localStorage.setItem('information', myInfo);
-    myParagraph.textContent = myInfo;
+    myParagraph.textContent = myParagraph.textContent + myInfo + " ";
   }
 
 myButton.onclick = function() {
