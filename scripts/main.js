@@ -10,14 +10,17 @@ myImage.onclick = function() {
 }
 
 let myButton = document.querySelector('button');
-let myParagraph = document.querySelector('p');
+let myList = document.querySelector('ul.name-list');
 
-function setUserName() {
-    let myInfo = prompt('请输入你想显示的信息。');
+function addName() {
+    let myInfo = prompt('Please enter the name you want to add');
     localStorage.setItem('information', myInfo);
-    myParagraph.textContent = myParagraph.textContent + myInfo + " ";
+    var node = document.createElement('li');
+    var textnode=document.createTextNode(myInfo);
+    node.appendChild(textnode);
+    myList.appendChild(node);
   }
 
 myButton.onclick = function() {
-    setUserName();
+    addName();
  }
